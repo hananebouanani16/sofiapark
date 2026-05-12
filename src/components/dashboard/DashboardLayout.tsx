@@ -1,11 +1,11 @@
 import { Outlet } from "@tanstack/react-router";
-import { Sidebar } from "./Sidebar";
+import { FloatingOrbs } from "./FloatingOrbs";
 
 export function DashboardLayout() {
   return (
-    <div className="min-h-screen flex">
-      <Sidebar />
-      <main className="flex-1 min-w-0 px-4 md:px-8 py-6 md:py-8">
+    <div className="relative min-h-screen overflow-hidden">
+      <FloatingOrbs />
+      <main className="relative z-10 px-4 md:px-10 py-6 md:py-10 max-w-[1600px] mx-auto">
         <Outlet />
       </main>
     </div>

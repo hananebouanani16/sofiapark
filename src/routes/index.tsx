@@ -20,12 +20,13 @@ import {
 } from "recharts";
 import {
   DollarSign,
-  Receipt,
+  ShoppingCart,
   TrendingUp,
   Users,
   Trophy,
   Sparkles,
 } from "lucide-react";
+import sofiaLogo from "@/assets/sofia-park-logo.png";
 import {
   fmtDA,
   kpis,
@@ -68,16 +69,26 @@ function Overview() {
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-wrap items-end justify-between gap-4"
       >
-        <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-primary/80 flex items-center gap-2">
-            <Sparkles className="h-3 w-3" /> Executive Dashboard
-          </p>
-          <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">
-            Bonjour, <span className="text-gradient">Sofia Park</span>
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Synthèse d'activité — 22 au 30 Avril 2026
-          </p>
+        <div className="flex items-center gap-4">
+          <motion.img
+            src={sofiaLogo}
+            alt="Sofia Park"
+            className="h-20 md:h-24 w-auto drop-shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+            initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
+            animate={{ scale: 1, rotate: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 120, damping: 12 }}
+          />
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary/80 flex items-center gap-2">
+              <Sparkles className="h-3 w-3" /> Executive Dashboard
+            </p>
+            <h1 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">
+              Bonjour, <span className="text-gradient">Sofia Park</span>
+            </h1>
+            <p className="text-sm text-muted-foreground mt-1">
+              Synthèse d'activité — 22 au 30 Avril 2026
+            </p>
+          </div>
         </div>
         <div className="glass rounded-xl px-4 py-2.5 text-sm">
           <span className="text-muted-foreground">Statut : </span>
@@ -95,9 +106,9 @@ function Overview() {
           delay={0}
         />
         <StatCard
-          icon={<Receipt className="h-5 w-5" />}
-          label="Transactions"
-          value={kpis.transactions.toLocaleString("fr-FR").replace(/,/g, " ")}
+          icon={<ShoppingCart className="h-5 w-5" />}
+          label="Total Achat"
+          value={fmtDA(kpis.totalPurchase)}
           hint={`Panier moyen ${fmtDA(kpis.avgBasket)}`}
           delay={0.05}
         />
