@@ -36,7 +36,7 @@ export const staff = [
 ];
 
 export const itEquipment = [
-  { item: "Laptop i3", available: 100 },
+  { item: "All in One", available: 100 },
   { item: "Imprimante", available: 100 },
   { item: "Scanners", available: 100 },
   { item: "Réseau", available: 95 },
@@ -46,6 +46,7 @@ export const itEquipment = [
 export const kpis = {
   revenue: 597465,
   transactions: 2662,
+  totalPurchase: 17465,
   avgBasket: 224.44,
   peakDate: "30 Avril",
   peakValue: 92320,
