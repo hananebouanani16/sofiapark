@@ -108,12 +108,19 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Sidebar } from "@/components/dashboard/Sidebar";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen flex">
+        <Sidebar />
+        <main className="flex-1 min-w-0 px-4 md:px-8 py-6 md:py-8">
+          <Outlet />
+        </main>
+      </div>
     </QueryClientProvider>
   );
 }
