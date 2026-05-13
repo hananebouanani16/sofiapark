@@ -38,7 +38,7 @@ export const staff = [
 export const itEquipment = [
   { item: "All in One", available: 100 },
   { item: "Imprimante", available: 100 },
-  { item: "Scanners", available: 100 },
+  { item: "Tlfn", available: 100 },
   { item: "Réseau", available: 95 },
   { item: "Caisse", available: 100 },
 ];

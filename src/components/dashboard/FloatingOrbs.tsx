@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 
-type Shape = "round" | "star" | "heart";
+type Shape = "round";
 
 const balloons: { shape: Shape; size: number; color: string; x: string; y: string; dur: number; depth: number }[] = [
-  { shape: "round", size: 110, color: "#A7D8F5", x: "6%", y: "12%", dur: 14, depth: 1 },
-  { shape: "heart", size: 95, color: "#F7B6C2", x: "78%", y: "10%", dur: 18, depth: 0.8 },
-  { shape: "star", size: 100, color: "#FFE38A", x: "22%", y: "62%", dur: 20, depth: 0.7 },
-  { shape: "round", size: 85, color: "#B8E6C1", x: "82%", y: "68%", dur: 16, depth: 0.6 },
-  { shape: "round", size: 70, color: "#D9C2F0", x: "48%", y: "38%", dur: 22, depth: 0.5 },
-  { shape: "heart", size: 60, color: "#FFCBA4", x: "36%", y: "18%", dur: 13, depth: 0.45 },
-  { shape: "star", size: 65, color: "#A7D8F5", x: "66%", y: "48%", dur: 17, depth: 0.5 },
-  { shape: "round", size: 50, color: "#FFE38A", x: "12%", y: "85%", dur: 15, depth: 0.35 },
+  { shape: "round", size: 130, color: "#A7D8F5", x: "5%", y: "10%", dur: 14, depth: 1 },
+  { shape: "round", size: 110, color: "#F7B6C2", x: "78%", y: "8%", dur: 18, depth: 0.85 },
+  { shape: "round", size: 120, color: "#FFE38A", x: "20%", y: "60%", dur: 20, depth: 0.75 },
+  { shape: "round", size: 95, color: "#B8E6C1", x: "82%", y: "65%", dur: 16, depth: 0.65 },
+  { shape: "round", size: 80, color: "#D9C2F0", x: "48%", y: "35%", dur: 22, depth: 0.55 },
+  { shape: "round", size: 70, color: "#FFCBA4", x: "36%", y: "18%", dur: 13, depth: 0.5 },
+  { shape: "round", size: 75, color: "#A7D8F5", x: "65%", y: "48%", dur: 17, depth: 0.55 },
+  { shape: "round", size: 60, color: "#FFE38A", x: "12%", y: "85%", dur: 15, depth: 0.4 },
 ];
 
 const stars = [
