@@ -44,7 +44,7 @@ export const itEquipment = [
 ];
 
 export const kpis = {
-  revenue: 597465,
+  revenue: 585365,
   transactions: 2662,
   totalPurchase: 17465,
   avgBasket: 224.44,

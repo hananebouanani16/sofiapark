@@ -53,11 +53,12 @@ export const Route = createFileRoute("/")({
 });
 
 const tooltipStyle = {
-  background: "oklch(0.22 0.04 255)",
-  border: "1px solid oklch(0.45 0.05 260 / 40%)",
-  borderRadius: 12,
-  color: "white",
+  background: "rgba(255,255,255,0.95)",
+  border: "1px solid rgba(80,90,160,0.2)",
+  borderRadius: 14,
+  color: "#1a2547",
   fontSize: 12,
+  boxShadow: "0 12px 30px -10px rgba(60,80,160,0.25)",
 };
 
 function Overview() {
