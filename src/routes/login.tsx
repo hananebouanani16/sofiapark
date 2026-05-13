@@ -36,8 +36,10 @@ function LoginPage() {
     try {
       const res = await loginFn({ data: { password } });
       if (res.ok) {
-        await router.invalidate();
-        router.navigate({ to: "/" });
+        // Hard reload so the new session cookie is sent with the next request
+        // and beforeLoad re-evaluates server-side.
+        window.location.href = "/";
+        return;
       } else {
         setError(res.error || "Mot de passe incorrect.");
       }
