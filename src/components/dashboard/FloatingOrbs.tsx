@@ -20,47 +20,21 @@ const stars = [
   { top: "55%", left: "85%", delay: 1, dur: 9, color: "#D9C2F0" },
 ];
 
-function BalloonShape({ shape, color }: { shape: Shape; color: string }) {
-  if (shape === "round") {
-    return (
-      <div
-        className="w-full h-full rounded-full relative"
-        style={{
-          background: `radial-gradient(circle at 30% 25%, color-mix(in oklab, ${color} 95%, white), ${color} 55%, color-mix(in oklab, ${color} 60%, black) 100%)`,
-          boxShadow: `inset -8px -12px 30px color-mix(in oklab, ${color} 40%, black), 0 25px 50px color-mix(in oklab, ${color} 35%, transparent), 0 0 60px color-mix(in oklab, ${color} 30%, transparent)`,
-        }}
-      >
-        <div className="absolute top-[12%] left-[22%] w-[28%] h-[22%] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(255,255,255,0.7), transparent 70%)", filter: "blur(3px)" }} />
-        {/* string */}
-        <div className="absolute left-1/2 -bottom-8 w-px h-8" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.4), transparent)" }} />
-      </div>
-    );
-  }
-  if (shape === "heart") {
-    return (
-      <svg viewBox="0 0 100 100" className="w-full h-full" style={{ filter: `drop-shadow(0 20px 40px ${color}66)` }}>
-        <defs>
-          <radialGradient id={`h-${color}`} cx="35%" cy="30%">
-            <stop offset="0%" stopColor="white" stopOpacity="0.9" />
-            <stop offset="40%" stopColor={color} />
-            <stop offset="100%" stopColor={color} stopOpacity="0.7" />
-          </radialGradient>
-        </defs>
-        <path d="M50 88 C20 65, 5 45, 20 25 C32 10, 48 18, 50 32 C52 18, 68 10, 80 25 C95 45, 80 65, 50 88 Z" fill={`url(#h-${color})`} />
-      </svg>
-    );
-  }
+function BalloonShape({ color }: { shape: Shape; color: string }) {
   return (
-    <svg viewBox="0 0 100 100" className="w-full h-full" style={{ filter: `drop-shadow(0 20px 40px ${color}66)` }}>
-      <defs>
-        <radialGradient id={`s-${color}`} cx="35%" cy="30%">
-          <stop offset="0%" stopColor="white" stopOpacity="0.9" />
-          <stop offset="40%" stopColor={color} />
-          <stop offset="100%" stopColor={color} stopOpacity="0.7" />
-        </radialGradient>
-      </defs>
-      <polygon points="50,5 61,38 96,38 68,59 79,92 50,72 21,92 32,59 4,38 39,38" fill={`url(#s-${color})`} />
-    </svg>
+    <div
+      className="w-full h-full rounded-full relative"
+      style={{
+        background: `radial-gradient(circle at 30% 25%, color-mix(in oklab, ${color} 95%, white), ${color} 55%, color-mix(in oklab, ${color} 60%, black) 100%)`,
+        boxShadow: `inset -10px -14px 34px color-mix(in oklab, ${color} 45%, black), 0 30px 60px color-mix(in oklab, ${color} 40%, transparent), 0 0 80px color-mix(in oklab, ${color} 35%, transparent)`,
+      }}
+    >
+      <div
+        className="absolute top-[12%] left-[22%] w-[30%] h-[24%] rounded-full"
+        style={{ background: "radial-gradient(ellipse, rgba(255,255,255,0.85), transparent 70%)", filter: "blur(3px)" }}
+      />
+      <div className="absolute left-1/2 -bottom-10 w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.5), transparent)" }} />
+    </div>
   );
 }
 
