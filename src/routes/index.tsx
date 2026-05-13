@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect, useRouter } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { motion } from "framer-motion";
 import {
   LineChart,
@@ -25,29 +26,29 @@ import {
   Users,
   Trophy,
   Sparkles,
+  LogOut,
 } from "lucide-react";
 import sofiaLogo from "@/assets/sofia-park-logo.png";
-import {
-  fmtDA,
-  kpis,
-  salesTrend,
-  topProducts,
-  margins,
-  staff,
-  itEquipment,
-} from "@/lib/dashboard-data";
+import { fmtDA, type DashboardData } from "@/lib/dashboard-data";
+import { getDashboardData } from "@/lib/dashboard.functions";
+import { checkAuth, logout } from "@/lib/auth.functions";
 import { StatCard } from "@/components/dashboard/StatCard";
 
 export const Route = createFileRoute("/")({
   component: Overview,
+  beforeLoad: async () => {
+    const { authed } = await checkAuth();
+    if (!authed) throw redirect({ to: "/login" });
+  },
+  loader: () => getDashboardData(),
   head: () => ({
     meta: [
       { title: "Sofia Park — Tableau de bord" },
       {
         name: "description",
-        content:
-          "Tableau de bord exécutif Sofia Park — ventes, performance produit, RH et inventaire IT.",
+        content: "Tableau de bord exécutif Sofia Park.",
       },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
 });
@@ -62,6 +63,17 @@ const tooltipStyle = {
 };
 
 function Overview() {
+  const data = Route.useLoaderData() as DashboardData;
+  const { kpis, salesTrend, topProducts, margins, staff, itEquipment } = data;
+  const router = useRouter();
+  const logoutFn = useServerFn(logout);
+
+  const onLogout = async () => {
+    await logoutFn();
+    await router.invalidate();
+    router.navigate({ to: "/login" });
+  };
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -91,9 +103,19 @@ function Overview() {
             </p>
           </div>
         </div>
-        <div className="glass rounded-xl px-4 py-2.5 text-sm">
-          <span className="text-muted-foreground">Statut : </span>
-          <span className="text-primary font-semibold">● En croissance</span>
+        <div className="flex items-center gap-2">
+          <div className="glass rounded-xl px-4 py-2.5 text-sm">
+            <span className="text-muted-foreground">Statut : </span>
+            <span className="text-primary font-semibold">● En croissance</span>
+          </div>
+          <button
+            onClick={onLogout}
+            className="glass rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:text-primary transition flex items-center gap-1.5"
+            title="Se déconnecter"
+          >
+            <LogOut className="h-4 w-4" />
+            <span className="hidden sm:inline">Déconnexion</span>
+          </button>
         </div>
       </motion.div>
 
