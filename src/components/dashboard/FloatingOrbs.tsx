@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 
-type Shape = "round" | "star" | "heart";
+type Shape = "round";
 
 const balloons: { shape: Shape; size: number; color: string; x: string; y: string; dur: number; depth: number }[] = [
-  { shape: "round", size: 110, color: "#A7D8F5", x: "6%", y: "12%", dur: 14, depth: 1 },
-  { shape: "heart", size: 95, color: "#F7B6C2", x: "78%", y: "10%", dur: 18, depth: 0.8 },
-  { shape: "star", size: 100, color: "#FFE38A", x: "22%", y: "62%", dur: 20, depth: 0.7 },
-  { shape: "round", size: 85, color: "#B8E6C1", x: "82%", y: "68%", dur: 16, depth: 0.6 },
-  { shape: "round", size: 70, color: "#D9C2F0", x: "48%", y: "38%", dur: 22, depth: 0.5 },
-  { shape: "heart", size: 60, color: "#FFCBA4", x: "36%", y: "18%", dur: 13, depth: 0.45 },
-  { shape: "star", size: 65, color: "#A7D8F5", x: "66%", y: "48%", dur: 17, depth: 0.5 },
-  { shape: "round", size: 50, color: "#FFE38A", x: "12%", y: "85%", dur: 15, depth: 0.35 },
+  { shape: "round", size: 130, color: "#A7D8F5", x: "5%", y: "10%", dur: 14, depth: 1 },
+  { shape: "round", size: 110, color: "#F7B6C2", x: "78%", y: "8%", dur: 18, depth: 0.85 },
+  { shape: "round", size: 120, color: "#FFE38A", x: "20%", y: "60%", dur: 20, depth: 0.75 },
+  { shape: "round", size: 95, color: "#B8E6C1", x: "82%", y: "65%", dur: 16, depth: 0.65 },
+  { shape: "round", size: 80, color: "#D9C2F0", x: "48%", y: "35%", dur: 22, depth: 0.55 },
+  { shape: "round", size: 70, color: "#FFCBA4", x: "36%", y: "18%", dur: 13, depth: 0.5 },
+  { shape: "round", size: 75, color: "#A7D8F5", x: "65%", y: "48%", dur: 17, depth: 0.55 },
+  { shape: "round", size: 60, color: "#FFE38A", x: "12%", y: "85%", dur: 15, depth: 0.4 },
 ];
 
 const stars = [
@@ -20,47 +20,21 @@ const stars = [
   { top: "55%", left: "85%", delay: 1, dur: 9, color: "#D9C2F0" },
 ];
 
-function BalloonShape({ shape, color }: { shape: Shape; color: string }) {
-  if (shape === "round") {
-    return (
-      <div
-        className="w-full h-full rounded-full relative"
-        style={{
-          background: `radial-gradient(circle at 30% 25%, color-mix(in oklab, ${color} 95%, white), ${color} 55%, color-mix(in oklab, ${color} 60%, black) 100%)`,
-          boxShadow: `inset -8px -12px 30px color-mix(in oklab, ${color} 40%, black), 0 25px 50px color-mix(in oklab, ${color} 35%, transparent), 0 0 60px color-mix(in oklab, ${color} 30%, transparent)`,
-        }}
-      >
-        <div className="absolute top-[12%] left-[22%] w-[28%] h-[22%] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(255,255,255,0.7), transparent 70%)", filter: "blur(3px)" }} />
-        {/* string */}
-        <div className="absolute left-1/2 -bottom-8 w-px h-8" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.4), transparent)" }} />
-      </div>
-    );
-  }
-  if (shape === "heart") {
-    return (
-      <svg viewBox="0 0 100 100" className="w-full h-full" style={{ filter: `drop-shadow(0 20px 40px ${color}66)` }}>
-        <defs>
-          <radialGradient id={`h-${color}`} cx="35%" cy="30%">
-            <stop offset="0%" stopColor="white" stopOpacity="0.9" />
-            <stop offset="40%" stopColor={color} />
-            <stop offset="100%" stopColor={color} stopOpacity="0.7" />
-          </radialGradient>
-        </defs>
-        <path d="M50 88 C20 65, 5 45, 20 25 C32 10, 48 18, 50 32 C52 18, 68 10, 80 25 C95 45, 80 65, 50 88 Z" fill={`url(#h-${color})`} />
-      </svg>
-    );
-  }
+function BalloonShape({ color }: { shape: Shape; color: string }) {
   return (
-    <svg viewBox="0 0 100 100" className="w-full h-full" style={{ filter: `drop-shadow(0 20px 40px ${color}66)` }}>
-      <defs>
-        <radialGradient id={`s-${color}`} cx="35%" cy="30%">
-          <stop offset="0%" stopColor="white" stopOpacity="0.9" />
-          <stop offset="40%" stopColor={color} />
-          <stop offset="100%" stopColor={color} stopOpacity="0.7" />
-        </radialGradient>
-      </defs>
-      <polygon points="50,5 61,38 96,38 68,59 79,92 50,72 21,92 32,59 4,38 39,38" fill={`url(#s-${color})`} />
-    </svg>
+    <div
+      className="w-full h-full rounded-full relative"
+      style={{
+        background: `radial-gradient(circle at 30% 25%, color-mix(in oklab, ${color} 95%, white), ${color} 55%, color-mix(in oklab, ${color} 60%, black) 100%)`,
+        boxShadow: `inset -10px -14px 34px color-mix(in oklab, ${color} 45%, black), 0 30px 60px color-mix(in oklab, ${color} 40%, transparent), 0 0 80px color-mix(in oklab, ${color} 35%, transparent)`,
+      }}
+    >
+      <div
+        className="absolute top-[12%] left-[22%] w-[30%] h-[24%] rounded-full"
+        style={{ background: "radial-gradient(ellipse, rgba(255,255,255,0.85), transparent 70%)", filter: "blur(3px)" }}
+      />
+      <div className="absolute left-1/2 -bottom-10 w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.5), transparent)" }} />
+    </div>
   );
 }
 
