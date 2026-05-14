@@ -131,8 +131,8 @@ function Overview() {
         <StatCard
           icon={<ShoppingCart className="h-5 w-5" />}
           label="Total Achat"
-          value={fmtDA(kpis.totalPurchase)}
-          hint={`Pic ${fmtDA(143745.76)} le 20/04/2026`}
+          value="161 210,76 DA"
+          hint="Pic 143 745,76 DA le 20/04/2026"
           delay={0.05}
         />
         <StatCard
