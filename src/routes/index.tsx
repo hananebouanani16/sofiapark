@@ -132,7 +132,7 @@ function Overview() {
           icon={<ShoppingCart className="h-5 w-5" />}
           label="Total Achat"
           value={fmtDA(kpis.totalPurchase)}
-          hint={`Panier moyen ${fmtDA(kpis.avgBasket)}`}
+          hint={`Pic ${fmtDA(143745.76)} le 20/04/2026`}
           delay={0.05}
         />
         <StatCard
