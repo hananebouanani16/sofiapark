@@ -45,7 +45,7 @@ export const itEquipment = [
 export const kpis = {
   revenue: 585365,
   transactions: 2662,
-  totalPurchase: 17465,
+  totalPurchase: 161210.76,
   avgBasket: 224.44,
   peakDate: "30 Avril",
   peakValue: 92320,
