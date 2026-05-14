@@ -124,7 +124,7 @@ function Overview() {
         <StatCard
           icon={<DollarSign className="h-5 w-5" />}
           label="Chiffre d'affaires"
-          value={fmtDA(kpis.revenue)}
+          value="585 365,00 DA"
           hint="Total Avril 2026"
           delay={0}
         />
@@ -138,7 +138,7 @@ function Overview() {
         <StatCard
           icon={<TrendingUp className="h-5 w-5" />}
           label="Pic d'activité"
-          value={fmtDA(kpis.peakValue)}
+          value="92 320,00 DA"
           hint={kpis.peakDate}
           delay={0.1}
         />
