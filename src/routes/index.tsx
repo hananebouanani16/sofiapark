@@ -146,7 +146,7 @@ function Overview() {
           icon={<Users className="h-5 w-5" />}
           label="Équipe active"
           value={`${kpis.staff} membres`}
-          hint="Turnover 0%"
+          hint="Turnover 25%"
           delay={0.15}
         />
       </div>
@@ -297,7 +297,7 @@ function Overview() {
           <div>
             <h2 className="font-semibold">Ressources humaines</h2>
             <p className="text-xs text-muted-foreground">
-              4 collaboratrices · 100% féminin · Turnover 0%
+              4 collaboratrices · 100% féminin · Turnover 25%
             </p>
           </div>
         </div>
