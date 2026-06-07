@@ -99,7 +99,7 @@ function Overview() {
               Bonjour, <span className="text-gradient">Sofia Park</span>
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
-              Synthèse d'activité — 22 au 30 Avril 2026
+              Synthèse d'activité — 1 au 31 Mai 2026
             </p>
           </div>
         </div>
@@ -124,21 +124,21 @@ function Overview() {
         <StatCard
           icon={<DollarSign className="h-5 w-5" />}
           label="Chiffre d'affaires"
-          value="585 365,00 DA"
-          hint="Total Avril 2026"
+          value="1 715 090,00 DA"
+          hint="Total Mai 2026"
           delay={0}
         />
         <StatCard
           icon={<ShoppingCart className="h-5 w-5" />}
           label="Total Achat"
-          value="161 210,76 DA"
-          hint="Pic 143 745,76 DA le 20/04/2026"
+          value="198 777,73 DA"
+          hint="Pic 113 705,27 DA le 22/05/2026"
           delay={0.05}
         />
         <StatCard
           icon={<TrendingUp className="h-5 w-5" />}
           label="Pic d'activité"
-          value="92 320,00 DA"
+          value="121 955,00 DA"
           hint={kpis.peakDate}
           delay={0.1}
         />
@@ -165,7 +165,7 @@ function Overview() {
               <p className="text-xs text-muted-foreground">DA / jour</p>
             </div>
             <span className="text-xs px-2 py-1 rounded-md bg-primary/15 text-primary">
-              +586% depuis le 22
+              Mai 2026
             </span>
           </div>
           <ResponsiveContainer width="100%" height={260}>
@@ -235,7 +235,7 @@ function Overview() {
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="font-semibold">Top 5 produits</h2>
+              <h2 className="font-semibold">Top 10 produits</h2>
               <p className="text-xs text-muted-foreground">Volume de vente (unités)</p>
             </div>
             <Trophy className="h-4 w-4 text-primary" />
@@ -263,29 +263,23 @@ function Overview() {
           transition={{ delay: 0.35 }}
           className="glass rounded-2xl p-5"
         >
-          <h2 className="font-semibold mb-1">Analyse des marges</h2>
-          <p className="text-xs text-muted-foreground mb-4">Top rentabilité</p>
+          <h2 className="font-semibold mb-1">Ventes / Marge par famille</h2>
+          <p className="text-xs text-muted-foreground mb-4">Total ventes & marge (DA)</p>
           <div className="space-y-3">
             {margins.map((m) => (
               <div
                 key={m.product}
-                className="flex items-center justify-between rounded-lg bg-secondary/30 px-3 py-2.5 border border-border/40"
+                className="rounded-lg bg-secondary/30 px-3 py-2.5 border border-border/40"
               >
-                <div className="min-w-0">
-                  <p className="text-sm font-medium truncate">{m.product}</p>
-                  <p className="text-[11px] text-muted-foreground">
-                    {fmtDA(m.cost)} → {fmtDA(m.price)}
-                  </p>
+                <p className="text-sm font-medium truncate">{m.product}</p>
+                <div className="mt-1 flex items-center justify-between text-[11px]">
+                  <span className="text-muted-foreground">
+                    Vente <span className="text-foreground font-semibold">{fmtDA(m.cost)}</span>
+                  </span>
+                  <span className="text-primary font-semibold">
+                    Marge {fmtDA(m.price)}
+                  </span>
                 </div>
-                <span
-                  className={`text-sm font-bold px-2 py-1 rounded-md ${
-                    m.margin >= 120
-                      ? "bg-primary/20 text-primary"
-                      : "bg-accent/20 text-accent-foreground"
-                  }`}
-                >
-                  {m.margin}%
-                </span>
               </div>
             ))}
           </div>
@@ -321,7 +315,6 @@ function Overview() {
                   .join("")}
               </div>
               <p className="mt-3 font-medium text-sm">{s.name}</p>
-              <p className="text-xs text-muted-foreground">{s.role}</p>
             </div>
           ))}
         </div>
