@@ -165,7 +165,7 @@ function Overview() {
               <p className="text-xs text-muted-foreground">DA / jour</p>
             </div>
             <span className="text-xs px-2 py-1 rounded-md bg-primary/15 text-primary">
-              +586% depuis le 22
+              Mai 2026
             </span>
           </div>
           <ResponsiveContainer width="100%" height={260}>
