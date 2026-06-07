@@ -99,7 +99,7 @@ function Overview() {
               Bonjour, <span className="text-gradient">Sofia Park</span>
             </h1>
             <p className="text-sm text-muted-foreground mt-1">
-              Synthèse d'activité — 22 au 30 Avril 2026
+              Synthèse d'activité — 1 au 31 Mai 2026
             </p>
           </div>
         </div>
