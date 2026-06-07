@@ -315,7 +315,6 @@ function Overview() {
                   .join("")}
               </div>
               <p className="mt-3 font-medium text-sm">{s.name}</p>
-              <p className="text-xs text-muted-foreground">{s.role}</p>
             </div>
           ))}
         </div>
