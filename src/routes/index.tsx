@@ -124,21 +124,21 @@ function Overview() {
         <StatCard
           icon={<DollarSign className="h-5 w-5" />}
           label="Chiffre d'affaires"
-          value="585 365,00 DA"
-          hint="Total Avril 2026"
+          value="1 715 090,00 DA"
+          hint="Total Mai 2026"
           delay={0}
         />
         <StatCard
           icon={<ShoppingCart className="h-5 w-5" />}
           label="Total Achat"
-          value="161 210,76 DA"
-          hint="Pic 143 745,76 DA le 20/04/2026"
+          value="198 777,73 DA"
+          hint="Pic 113 705,27 DA le 22/05/2026"
           delay={0.05}
         />
         <StatCard
           icon={<TrendingUp className="h-5 w-5" />}
           label="Pic d'activité"
-          value="92 320,00 DA"
+          value="121 955,00 DA"
           hint={kpis.peakDate}
           delay={0.1}
         />
