@@ -235,7 +235,7 @@ function Overview() {
         >
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="font-semibold">Top 5 produits</h2>
+              <h2 className="font-semibold">Top 10 produits</h2>
               <p className="text-xs text-muted-foreground">Volume de vente (unités)</p>
             </div>
             <Trophy className="h-4 w-4 text-primary" />
